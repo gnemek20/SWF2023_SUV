@@ -10,11 +10,11 @@ router.get('/', function(req, res, next) {
 });
 
 // POST METHOD
-router.post('/uploadImage', upload.single(), (req, res) => {
+router.post('/uploadImage', upload.any(), (req, res) => {
   console.log('\n\n\nreq\n\n\n');
   console.log(req)
   console.log('\n\n\nfile\n\n\n');
-  console.log(req.file);
+  console.log(req.files);
 
   res.status(200).send('uploaded');
 })
